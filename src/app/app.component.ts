@@ -18,5 +18,5 @@ export class AppComponent {
   telefono = '+34 697 292 503';
   email = 'adri1952005.4@gmail.com';
   github = 'https://github.com/asanmun1905';
-  idiomas = 'Español, Inglés';
+  idiomas = 'Español nativo, Inglés alto';
 }
