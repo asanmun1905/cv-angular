@@ -57,3 +57,12 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+
+## Conceptos del CV
+
+- **Interpolación:** `{{ }}` muestra en la plantilla el valor de una propiedad del componente. Por ejemplo, `{{ this.nombre }}` muestra el nombre definido en `app.component.ts`.
+- **NgOptimizedImage:** `ngSrc` indica la ruta de la imagen y la directiva ayuda a optimizar su carga. `width` y `height` permiten reservar el espacio de la imagen. El CV usa `foto-placeholder.svg` como imagen provisional.
+- **Bucle `@for`:** recorre arrays y crea un elemento por cada valor. Por ejemplo, `@for (tecnologia of this.tecnologias; track tecnologia)` representa cada tecnología.
+- **DatePipe:** se importa `DatePipe` y se aplica con `{{this.fecha | date: 'dd/MM/yyyy'}}` para dar formato día/mes/año a la fecha.
+
+Los datos nuevos del contenido profesional se encuentran en las propiedades de `app.component.ts`; la estructura está en `app.component.html` y su distribución usa Flexbox en `app.component.css`.
