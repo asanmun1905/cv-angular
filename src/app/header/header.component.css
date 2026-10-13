@@ -1,0 +1,58 @@
+:host {
+  display: block;
+}
+
+header {
+  background-color: #5c4938;
+  color: white;
+  padding: 1rem;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 1rem;
+}
+
+.presentacion,
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem 2rem;
+  flex-wrap: wrap;
+}
+
+.presentacion p {
+  margin: 0;
+}
+
+nav {
+  margin-top: 1rem;
+}
+
+nav button {
+  border: 1px solid #ddbb93;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+  font: inherit;
+}
+
+nav button.activo {
+  background-color: #ddbb93;
+  color: #3f3024;
+  cursor: default;
+}
+
+@media (max-width: 700px) {
+  .presentacion,
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

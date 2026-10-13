@@ -1,0 +1,61 @@
+:host {
+  display: block;
+}
+
+aside {
+  height: 100%;
+  background-color: #ddbb93;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-radius: 1rem;
+  border: 5px solid #5c4938;
+}
+
+h2 {
+  text-align: center;
+  padding: 1rem;
+  color: #5c4938;
+}
+
+p {
+  padding: 0.5rem;
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: #5c4938;
+}
+
+.contact-toggle,
+.tecnologias button {
+  border: 0;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  background-color: #5c4938;
+  color: white;
+  font: inherit;
+  cursor: pointer;
+}
+
+.tecnologias {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tecnologias button {
+  background-color: #f0dec5;
+  color: #3f3024;
+}
+
+.tecnologia-seleccionada {
+  font-weight: bold;
+}
+
+@media (max-width: 700px) {
+  aside {
+    height: auto;
+    border-radius: 0;
+  }
+}

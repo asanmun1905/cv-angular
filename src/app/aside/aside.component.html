@@ -1,0 +1,42 @@
+<aside class="informacion-personal">
+  <h2>Información Personal</h2>
+
+  <button
+    class="contact-toggle"
+    type="button"
+    [attr.aria-expanded]="mostrarContacto"
+    (click)="alternarContacto()"
+  >
+    {{ mostrarContacto ? 'Ocultar' : 'Mostrar' }} datos de contacto
+  </button>
+
+  @if (mostrarContacto) {
+    <p>Ciudad: {{ ciudad() }}</p>
+    <p>Teléfono: {{ telefono() }}</p>
+    <p>Email: {{ email() }}</p>
+    <p>
+      GitHub:
+      <a [href]="github()" target="_blank" rel="noopener noreferrer">
+        {{ github() }}
+      </a>
+    </p>
+    <p>Idiomas: {{ idiomas() }}</p>
+  }
+
+  <h2>Tecnologías</h2>
+  <div class="tecnologias">
+    @for (tecnologia of tecnologias(); track tecnologia) {
+      <button type="button" (click)="seleccionarTecnologia(tecnologia)">
+        {{ tecnologia }}
+      </button>
+    } @empty {
+      <p>Todavía no se han añadido tecnologías.</p>
+    }
+  </div>
+
+  @if (tecnologiaSeleccionada) {
+    <p class="tecnologia-seleccionada">
+      Tecnología seleccionada: {{ tecnologiaSeleccionada }}
+    </p>
+  }
+</aside>

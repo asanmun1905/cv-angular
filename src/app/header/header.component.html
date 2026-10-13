@@ -1,0 +1,36 @@
+<header>
+  <h1 class="titulo">{{ titulo() }}</h1>
+
+  <div class="presentacion">
+    <p>{{ nombre() }}</p>
+    <p>{{ grado() }}</p>
+    <p>{{ fecha() | date: 'dd/MM/yyyy' }}</p>
+  </div>
+
+  <nav aria-label="Secciones del currículum">
+    <button
+      type="button"
+      [class.activo]="seccionActiva() === 'resumen'"
+      [disabled]="seccionActiva() === 'resumen'"
+      (click)="seleccionarSeccion('resumen')"
+    >
+      Resumen
+    </button>
+    <button
+      type="button"
+      [class.activo]="seccionActiva() === 'experiencia'"
+      [disabled]="seccionActiva() === 'experiencia'"
+      (click)="seleccionarSeccion('experiencia')"
+    >
+      Experiencia
+    </button>
+    <button
+      type="button"
+      [class.activo]="seccionActiva() === 'formacion'"
+      [disabled]="seccionActiva() === 'formacion'"
+      (click)="seleccionarSeccion('formacion')"
+    >
+      Formación
+    </button>
+  </nav>
+</header>

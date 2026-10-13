@@ -1,82 +1,23 @@
+<app-header
+  [titulo]="titulo"
+  [nombre]="nombre"
+  [grado]="grado"
+  [fecha]="fecha"
+  [seccionActiva]="seccionActiva"
+  (seccionSeleccionada)="cambiarSeccion($event)"
+/>
 
-<header>
-  <h1 class="titulo">{{ this.titulo }}</h1>
+<app-main-layout
+  [seccion]="seccionActiva"
+  [ciudad]="ciudad"
+  [telefono]="telefono"
+  [email]="email"
+  [github]="github"
+  [idiomas]="idiomas"
+  [sobreMi]="sobreMi"
+  [experiencias]="experiencias"
+  [formacion]="formacion"
+  [tecnologias]="tecnologias"
+/>
 
-  <div class="presentacion">
-    <p>{{ this.nombre }}</p>
-    <p>{{ this.grado }}</p>
-    <p>{{ this.fecha | date: 'dd/MM/yyyy' }}</p>
-  </div>
-</header>
-
-<div class="main">
-  <aside class="informacion-personal">
-    <h2>Información Personal</h2>
-
-    <p>Ciudad: {{ this.ciudad }}</p>
-    <p>Teléfono: {{ this.telefono }}</p>
-    <p>Email: {{ this.email }}</p>
-
-    <p>
-      GitHub:
-      <a [href]="this.github" target="_blank">
-        {{ this.github }}
-      </a>
-    </p>
-
-    <p>Idiomas: {{ this.idiomas }}</p>
-  </aside>
-
-  <main class="contenido-principal">
-
-    <section class="cv-seccion">
-      <h2>Sobre mí</h2>
-
-      <div class="sobre-mi">
-        <img
-          ngSrc="/images/foto.jpeg"
-          width="140"
-          height="140"
-          alt="Fotografía de Adrián Sánchez"
-        >
-
-        <p>{{ this.sobreMi }}</p>
-      </div>
-    </section>
-
-    <section class="cv-seccion">
-      <h2>Experiencia profesional</h2>
-
-      @for (experiencia of this.experiencias; track experiencia.empresa) {
-        <article class="experiencia">
-          <h3>{{ experiencia.empresa }}</h3>
-          <p class="puesto">
-            {{ experiencia.puesto }} · {{ experiencia.periodo }}
-          </p>
-          <p>{{ experiencia.descripcion }}</p>
-        </article>
-      }
-    </section>
-
-    <section class="cv-seccion">
-      <h2>Formación</h2>
-      <p>{{ this.formacion }}</p>
-    </section>
-
-    <section class="cv-seccion">
-      <h2>Tecnologías</h2>
-
-      <div class="tecnologias">
-        @for (tecnologia of this.tecnologias; track tecnologia) {
-          <span>{{ tecnologia }}</span>
-        }
-      </div>
-    </section>
-
-  </main>
-</div>
-
-<footer>
-  &copy; {{ this.nombre }} - {{ this.fecha | date: 'yyyy' }}
-</footer>
-
+<app-footer [nombre]="nombre" [fecha]="fecha" />
